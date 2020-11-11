@@ -23,14 +23,6 @@ These examples can be used as-is or, as they are open source, can be extended to
 - [NVIDIA-docker v2+](https://github.com/nvidia/nvidia-docker/wiki/Frequently-Asked-Questions#how-do-i-install-20-if-im-not-using-the-latest-docker-version).
 
 
-### Download data files
-
-Run the following command at the project root diretory 
-```bash
-bash download_data.sh
-
-```
-
 ### Install
 
 gQuant source code can be downloaded from [GitHub](https://github.com/rapidsai/gquant).
@@ -40,11 +32,17 @@ gQuant source code can be downloaded from [GitHub](https://github.com/rapidsai/g
 ```bash
 $ git clone https://github.com/rapidsai/gQuant.git
 ```
+### Download data files
 
+Run the following command at the project root diretory 
+```bash
+bash download_data.sh
+
+```
 
 - Build and run the container:
 ```bash
-$ cd gQuant && . build.sh
+$ cd gQuant && ./build.sh
 $ docker run --runtime=nvidia --rm -it -p 8888:8888 -p 8787:8787 -p 8786:8786 gquant/gquant:latest
 $ source activate rapids
 $ bash rapids/notebooks/utils/start-jupyter.sh 
